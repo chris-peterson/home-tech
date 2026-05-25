@@ -13,6 +13,7 @@ The site has three top-level sections, each with its own conventions:
 | Section | Lives in | Purpose |
 |---------|----------|---------|
 | **Diagrams** | `docs/diagrams/` | Mermaid diagrams (topology, service maps, data flows) |
+| **Inventory** | `docs/inventory/` | Endpoint devices and cloud services (network gear stays under Diagrams) |
 
 When adding content, pick the kind first. If it doesn't fit, propose a new section before sprinkling files into the wrong one.
 
@@ -40,6 +41,7 @@ Do not duplicate content between them.
 ## When making changes
 
 - **New diagram** — Drop the file in `docs/diagrams/`, link it from `docs/diagrams/README.md`.
+- **New inventory entry** — Add a row to the relevant table in `docs/inventory/devices.md` or `docs/inventory/services.md`. Match the date format already in the table.
 - **Restructure** — If a section grows past ~10 entries, consider sub-grouping in the sidebar (see the docsify skill's *Long-list pattern*).
 
 ## Preview before pushing

@@ -5,3 +5,4 @@ Notes, diagrams, and decision records for the technology stack running my home �
 ## Where to start
 
 - **[Diagrams](/diagrams/)** — Network topology, service maps, and other Mermaid diagrams.
+- **[Inventory](/inventory/)** — Endpoint devices and cloud services.

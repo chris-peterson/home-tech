@@ -1,2 +1,3 @@
 - [Home](/)
 - [Diagrams](/diagrams/)
+- [Inventory](/inventory/)
