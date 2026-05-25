@@ -14,8 +14,6 @@ docs/
 ├── _sidebar.md        # docsify navigation
 ├── index.html         # docsify shell (uses chris-peterson.github.io shared JS)
 ├── favicon.svg
-├── decisions/         # ADRs
-├── notes/             # setup walkthroughs, configs
 └── diagrams/          # Mermaid diagrams
 .github/workflows/docs.yml   # Pages deployment
 AGENTS.md                    # authoring conventions for Claude Code sessions

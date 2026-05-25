@@ -12,24 +12,9 @@ The site has three top-level sections, each with its own conventions:
 
 | Section | Lives in | Purpose |
 |---------|----------|---------|
-| **Decisions** | `docs/decisions/` | Append-only ADRs capturing what was chosen and why |
-| **Notes** | `docs/notes/` | Setup walkthroughs, config snippets, how-to references |
 | **Diagrams** | `docs/diagrams/` | Mermaid diagrams (topology, service maps, data flows) |
 
 When adding content, pick the kind first. If it doesn't fit, propose a new section before sprinkling files into the wrong one.
-
-## Decisions (ADRs)
-
-- File name: `NNNN-short-slug.md` (zero-padded sequence, e.g. `0001-pick-router.md`).
-- Sections in order: **Status**, **Context**, **Decision**, **Consequences**.
-- Append-only. A revisited decision becomes a new ADR; the old one's status flips to `Superseded by [NNNN-…](./NNNN-….md)`. Do not rewrite history in the original.
-- Sidebar: list ADRs newest-first under `[Decisions](/decisions/)` once there are enough to warrant individual sidebar entries. Until then, the index page lists them inline.
-
-## Notes
-
-- Free-form. One topic per file. Use a descriptive slug (`unifi-vlan-setup.md`, not `setup.md`).
-- Lead with what the note is for in one sentence so the reader knows whether to keep reading.
-- Config snippets go in fenced code blocks with a language tag (`bash`, `yaml`, `json`, etc.) — never untagged.
 
 ## Diagrams
 
@@ -54,8 +39,6 @@ Do not duplicate content between them.
 
 ## When making changes
 
-- **New ADR** — Pick the next number, write the file, link it from `docs/decisions/README.md`.
-- **New note** — Drop the file in `docs/notes/`, link it from `docs/notes/README.md`.
 - **New diagram** — Drop the file in `docs/diagrams/`, link it from `docs/diagrams/README.md`.
 - **Restructure** — If a section grows past ~10 entries, consider sub-grouping in the sidebar (see the docsify skill's *Long-list pattern*).
 

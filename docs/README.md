@@ -4,6 +4,4 @@ Notes, diagrams, and decision records for the technology stack running my home �
 
 ## Where to start
 
-- **[Decisions](/decisions/)** — Architecture Decision Records (ADRs): what I chose, what I rejected, and why.
-- **[Notes](/notes/)** — Setup walkthroughs, config snippets, and how-to references for specific bits of the stack.
 - **[Diagrams](/diagrams/)** — Network topology, service maps, and other Mermaid diagrams.
