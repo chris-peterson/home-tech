@@ -1,3 +1,4 @@
 - [Home](/)
 - [Diagrams](/diagrams/)
 - [Inventory](/inventory/)
+- [Decisions](/decisions/)

@@ -6,3 +6,4 @@ Notes, diagrams, and decision records for the technology stack running my home �
 
 - **[Diagrams](/diagrams/)** — Network topology, service maps, and other Mermaid diagrams.
 - **[Inventory](/inventory/)** — Endpoint devices and cloud services.
+- **[Decisions](/decisions/)** — Choices made about the stack, and the reasoning behind them.

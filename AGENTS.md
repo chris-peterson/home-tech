@@ -1,47 +1,33 @@
 # AGENTS.md — Working on home-tech
 
-Authoring conventions for Claude Code sessions editing this repo. Read before adding or restructuring content.
+Operating instructions for Claude Code sessions editing this repo. Read before adding or restructuring content.
 
 ## What this repo is
 
-A personal knowledge base for the home technology stack — network gear, servers, self-hosted services, and the choices behind them. It is **not** a code project. There is no build, no test suite, no generators. Every file under `docs/` is hand-edited markdown.
+A personal knowledge base for the home technology stack — network gear, servers, self-hosted services, and the choices behind them. It is **not** a code project. There is no build, no test suite, no generators.
 
-## Content kinds
+## Authoring conventions live in the README
 
-The site has three top-level sections, each with its own conventions:
+[README.md](README.md) holds the conventions for this repo: which section content belongs in, the current-state vs. decisions split, the Mermaid rules, and the docsify hub wiring. It is the maintainer-facing surface and the single home for that material — read it before writing, and update it there rather than restating it here.
 
-| Section | Lives in | Purpose |
-|---------|----------|---------|
-| **Diagrams** | `docs/diagrams/` | Mermaid diagrams (topology, service maps, data flows) |
-| **Inventory** | `docs/inventory/` | Endpoint devices and cloud services (network gear stays under Diagrams) |
+The rest of this file is the operating direction that has no reader outside a Claude Code session.
 
-When adding content, pick the kind first. If it doesn't fit, propose a new section before sprinkling files into the wrong one.
+## Audience
 
-## Diagrams
+Three surfaces, three audiences. Content belongs to exactly one:
 
-- All Mermaid diagrams use the hand-drawn look. Every diagram starts with `%%{ init: { 'look': 'handDrawn' } }%%`.
-- Use the latest Mermaid (CDN is pinned by the shared hub JS; do not override).
-- No `\n` or `<br>` line breaks in node labels — they don't render. Use separate nodes or shorter labels.
-- Sankey diagrams are fine for "what depends on what" views; see the docsify skill for the syntax.
+- **`README.md`** — someone cloning the repo to work on it.
+- **`docs/`** — someone reading the published site. No authoring guidance here.
+- **`AGENTS.md`** — this file.
 
-## Docsify wiring
-
-- This repo follows the **chris-peterson hub pattern**: `docs/index.html` loads `https://chris-peterson.github.io/js/docsify-shared.js` and calls `initProject(...)`. No local CSS, no theme files. Do **not** add standalone docsify scaffolding.
-- `code_languages` in `initProject` should match what's actually in fenced code blocks. Add languages there as content grows; don't speculatively load plugins.
-- Sidebar links are absolute (`/decisions/`, `/notes/foo`) per the `use-absolute-paths-for-docsify` rule.
-- The `**Section**` + `[Section](/path/)` pattern in `_sidebar.md` is intentional — bold for grouping, link-no-children for sections with dedicated index pages.
-
-## Audience: README vs. docs
-
-- Root `README.md` — for someone cloning the repo to work on it. Repo layout, preview command, deployment.
-- `docs/README.md` — landing page for the published site. End-user perspective.
-
-Do not duplicate content between them.
+When the same paragraph wants to exist in two of them, pick the owner and link from the other.
 
 ## When making changes
 
 - **New diagram** — Drop the file in `docs/diagrams/`, link it from `docs/diagrams/README.md`.
-- **New inventory entry** — Add a row to the relevant table in `docs/inventory/devices.md` or `docs/inventory/services.md`. Match the date format already in the table.
+- **New inventory entry** — Add a row to the relevant table in `docs/inventory/`. Match the date format already in the table.
+- **New decision** — Drop the file in `docs/decisions/`, link it from `docs/decisions/README.md`. Leave `docs/diagrams/` and `docs/inventory/` describing what is installed until the change lands, then update them in a separate pass.
+- **Power figures** — Rated draw comes from the manufacturer's tech specs and gets a source. Measured draw comes from a meter at the outlet and gets a date. Keep the two in separate columns; a rated figure is not a measurement.
 - **Restructure** — If a section grows past ~10 entries, consider sub-grouping in the sidebar (see the docsify skill's *Long-list pattern*).
 
 ## Preview before pushing
@@ -50,4 +36,4 @@ Do not duplicate content between them.
 just docs
 ```
 
-If the change is visual (sidebar restructure, new diagram, layout edit), open it in a browser before committing.
+If the change is visual (sidebar restructure, new diagram, layout edit), open it in a browser before committing. The shared theme CSS and `projects.yml` 404 under local preview — expected, since they come from the hub rather than this repo.
